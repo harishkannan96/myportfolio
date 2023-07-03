@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,500;1,600&display=swap");
+/*universal selector(it selects each and every tag*/
+*{
+  outline:none;/*it is for preventing the outline in submit button when it is clicked*/
+  box-sizing:border-box;/*it moves content from border like box frame*/
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-font-smoothing:antialiased; /*Switching from subpixel rendering to antialiasing for light text on dark backgrounds makes it look lighter*/
+}
+/*Custom scrollbar*/
+/*webkit is a part of browser,to target some element from web(i.e)scroll bar is not a part of
+ website it is contributed by browser so webkit is used*/
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:grey;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#555;
+}
+
+/*styles for background*/
+body::before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(
+        180deg,rgba(255,255,255,0.72) 0%,rgba(255,255,255,0.45) 100%);
+        -webkit-backdrop-filter:saturate(3);
+        backdrop-filter:saturate(3);
+    
+
+    }
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image:url(
+        https://images-cdn.welcomesoftware.com/Zz0zZTliMjQ4MzhlNGExMWViYmJiMjFiZTI2ZWNmN2MzZA==
+    );
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:2em;
+    margin:0;
+    width:100%;
+    height:100vh;
+    }
+    @media screen and (max-width:480px){
+        body{
+            padding:0.8em;
+        }
+    }
+    main{
+        background-color: rgb(255 255 255/31%);
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        max-width:1250px;
+        width:100%;
+        border-radius:5px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        font-weight:500;
+        padding:1rem 1rem 2rem 1rem;
+        overflow:auto;
+    }
+    /*to hide scrollbar*/
+    main::-webkit-scrollbar{
+        display:none;
+    }
+    
+    .navbar{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        width:100%;
+        border-bottom:1.5px solid powderblue;
+
+
+    }
+
+    .navbar>h1,.navbar>.navigationmenu{
+        margin:10px;
+    }
+
+    .navigationmenu > a{ /*here > this indicates targeting the anchor tag*/
+        padding:5px 10px;/*5px in x axis 10px in y axis*/
+        margin-left:10px;
+        text-decoration:none; /*it is to remove the blue color of anchor tag*/
+        color:black;
+        display:inline-block;
+    }
+    
+    .navigationmenu > a:hover{
+        transition:ease-in-out 300ms;
+        background: plum;
+    }
+    /*if screenpixel is 760 then the navigationmenu is hidden*/
+    @media only screen and (max-width: 760px){
+        .navigationmenu{
+            display: none;
+        }
+    }
+       
+    .heropage{
+        margin:2rem 0;/*2rem on left and right 0 on top and bottom*/
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;/*if there is no extra space to show it 
+        will move to next line*/
+        align-items:center;
+        justify-content:space-evenly;
+
+    }
+    
+    .profileimage{
+        width:350px;
+        height: 350px;
+        object-fit:cover;
+        object-position:center;
+        border-radius:5px;
+    }
+    .herosectiondetails{
+        text-align: center;
+    }
+    .herosectiondetails > h1{ /*targeting h1*/
+        font-size:50px;
+        margin:10px;
+    
+    }
+    .aboutme{
+        margin:1rem;
+        text-align:justify;
+    }
+    .skillsandproject{
+        margin:1rem;
+        display:grid;
+        grid-template-columns: [one];
+        grid-gap:50px;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 2rem)
+
+    }
+    @media only screen and (max-width:720px){
+        .skillsandproject{
+            grid-template-columns: [one] 100%;
+            grid-template-rows: [one] [two];
+        }
+    }
+
+    .skillsandproject >.skills, .skillsandproject> .paper{
+        min-width:250px;
+        margin:1rem;
+        min-height:250px;
+
+    }
+    .skillsandproject >.skills, .skillsandproject> .paper{
+        display:flex;
+        flex-wrap: wrap;
+        align-items:center;
+        justify-content: center;
+        align-content: center;
+        background-color: rgb(255 255 255/31%);
+        border: 1px solid rgb(255 255 255/31%);
+        border-radius: 5px;
+        padding:1rem;
+        margin-bottom: 2rem;
+    }
+    .cardheading{
+        display:block;
+        width:90%;
+        margin:0%;
+        margin-bottom: 1rem;
+
+    }
+    .list li{
+        display:inline;
+    }
+
+    .skillsandproject >.skills >ol img{
+        width:60px;
+        height:60px;
+        margin-bottom:25px;
+        margin-right:25px;
+
+    }
+    .skillsandproject >.skills > .list:hover{
+        transition:ease-in 300ms;
+        transform:scale(0.85);
+        cursor:pointer;
+    }
+
+    .projectcontainer{
+        display:flex;
+        width:90%;
+
+    }
+
+    .projectcontainer >img{
+        width:60px;
+        height:60px;
+        padding-right:10px;
+    }
+    .projectcontainer >.projectdescription >p{
+        margin:0;
+        margin-bottom:1rem;
+        
+        
+    }
+    .contactform{
+        margin:2rem;
+        width:calc(100% -4rem);/*it is the calculation function
+        where we dont know crct value that is remove 4rem from 100% width so minus sign is used*/
+        background-color: rgb(255 255 255/31%);
+        border:1px solid rgb(255 255 255/31%);
+        border-radius:5px;
+        padding:1rem;
+
+    }
+    .contactform >.formgroup{
+        margin-bottom:1rem; /*spacing*/
+    }
+    .formgroup >input, .formgroup > textarea{
+        width:100%;
+        padding:5px 10px;
+        margin-top:5px;
+        font-weight: 600;
+
+    }
+    .submitbutton{
+        padding:10px 20px;
+        font-weight:600;
+        font-size: 15px;
+
+
+    }
+
+    @media only screen and (max-width:460px){
+        .profileimage{
+            width:250px;
+            height:250px;
+
+        }
+
+        .herosectiondetails >.h1{
+            font-size:20px;
+            margin:0;
+            font-weight:400;
+
+        }
+    }
+
+
+
+
+
+
+    
+
